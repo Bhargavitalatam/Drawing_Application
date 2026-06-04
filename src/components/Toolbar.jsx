@@ -96,6 +96,7 @@ const Toolbar = ({
             <button
               key={tool.id}
               data-testid={tool.testId}
+              data-test-id={tool.testId}
               onClick={() => setActiveTool(tool.id)}
               className={`p-2.5 rounded-lg transition-all duration-300 flex items-center justify-center relative group ${
                 isActive 
@@ -123,6 +124,7 @@ const Toolbar = ({
             <input
               type="color"
               data-testid="color-picker"
+              data-test-id="color-picker"
               value={color}
               onChange={(e) => setColor(e.target.value)}
               className="w-9 h-9 rounded-xl border border-slate-700 bg-transparent cursor-pointer overflow-hidden p-0 [&::-webkit-color-swatch-wrapper]:p-0 [&::-webkit-color-swatch]:border-none [&::-moz-color-swatch]:border-none"
@@ -164,6 +166,7 @@ const Toolbar = ({
               <input
                 type="range"
                 data-testid="brush-size-slider"
+                data-test-id="brush-size-slider"
                 min="1"
                 max="50"
                 value={brushSize}
@@ -206,6 +209,7 @@ const Toolbar = ({
       <div className="flex items-center gap-2">
         <button
           data-testid="undo-button"
+          data-test-id="undo-button"
           onClick={onUndo}
           disabled={!canUndo}
           className={`p-2.5 rounded-xl border border-slate-800 bg-slate-900 transition-colors relative group ${
@@ -236,6 +240,7 @@ const Toolbar = ({
 
         <button
           data-testid="clear-canvas-button"
+          data-test-id="clear-canvas-button"
           onClick={onClear}
           className="p-2.5 rounded-xl border border-slate-800 bg-slate-900 hover:bg-rose-950/40 hover:border-rose-900/60 hover:text-rose-200 text-slate-300 transition-colors relative group"
           title="Clear Entire Canvas"
@@ -250,6 +255,7 @@ const Toolbar = ({
 
         <button
           data-testid="save-storage-button"
+          data-test-id="save-storage-button"
           onClick={onSave}
           className="p-2.5 rounded-xl bg-slate-800/80 hover:bg-indigo-950/40 border border-slate-700/50 hover:border-indigo-500/40 text-slate-200 hover:text-indigo-200 font-semibold text-xs flex items-center gap-1.5 transition-all duration-300 relative group"
           title="Save drawing to local storage gallery"
@@ -263,6 +269,7 @@ const Toolbar = ({
 
         <button
           data-testid="export-png-button"
+          data-test-id="export-png-button"
           onClick={onExport}
           className="p-2.5 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-semibold text-xs flex items-center gap-1.5 transition-all duration-300 shadow-md shadow-indigo-600/10 relative group"
           title="Export Canvas as PNG image"

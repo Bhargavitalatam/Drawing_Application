@@ -32,7 +32,11 @@ const Gallery = ({ isOpen, onClose, drawings, onLoadDrawing, onDeleteDrawing, on
         </div>
 
         {/* Content */}
-        <div data-testid="gallery-container" className="flex-grow overflow-y-auto p-5 space-y-4 custom-scrollbar">
+        <div 
+          data-testid="gallery-container" 
+          data-test-id="gallery-container" 
+          className="flex-grow overflow-y-auto p-5 space-y-4 custom-scrollbar"
+        >
           {drawings.length === 0 ? (
             <div className="h-64 flex flex-col items-center justify-center text-center text-slate-500 gap-3">
               <FolderOpen className="w-12 h-12 opacity-30 stroke-[1.5]" />
@@ -44,6 +48,7 @@ const Gallery = ({ isOpen, onClose, drawings, onLoadDrawing, onDeleteDrawing, on
               <div 
                 key={drawing.id} 
                 data-testid={`gallery-item-${index}`}
+                data-test-id={`gallery-item-${index}`}
                 onClick={() => onLoadDrawing(drawing)}
                 className="group relative bg-slate-950/40 border border-slate-800 rounded-xl overflow-hidden hover:border-indigo-500/50 transition-all duration-300 shadow-lg hover:shadow-indigo-500/5 cursor-pointer"
               >

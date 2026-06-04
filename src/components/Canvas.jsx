@@ -212,6 +212,7 @@ const Canvas = ({
     <canvas
       ref={canvasRef}
       data-testid="drawing-canvas"
+      data-test-id="drawing-canvas"
       onMouseDown={startDrawing}
       onMouseMove={draw}
       onMouseUp={stopDrawing}
